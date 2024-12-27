@@ -121,8 +121,7 @@ class BottomSheetBoardReadChatFragment(val boardReadFragment: BoardReadFragment)
 
     // 포커스 풀기
     fun clearEditTextFocus() {
-        val editText =
-            fragmentBottomSheetBoardReadChatBinding.editTextCommentBottomSheetBoardReadChat
+        val editText = fragmentBottomSheetBoardReadChatBinding.editTextCommentBottomSheetBoardReadChat
         editText.clearFocus()
     }
 
@@ -289,7 +288,9 @@ class BottomSheetBoardReadChatFragment(val boardReadFragment: BoardReadFragment)
                     // 키보드가 닫힐 때 동작
                     // 에딧 텍스트 포커스 clear하기,
                     // 포커스가 풀리면, 바텀시트를 조절하기 때문,ㅂㅈ
-                    clearEditTextFocus()
+                    if (dialog?.isShowing == true){
+                        clearEditTextFocus()
+                    }
                 }
             }
         })
